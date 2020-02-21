@@ -2,7 +2,7 @@
 
 1.Overview\
 In the scope of this project I plan to built a "BMI_calculator".
-Which will enable users to enter, their weight and height data and get an approximate measure of the best weight for their health.
+Which will enable users with an inactive lifestyle to enter their weight and height data and get an approximate measure of the best weight for their health.
 
 2.Target Users\
 Who: Everyone,especially 20+\
