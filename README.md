@@ -1,14 +1,13 @@
 # AUA_ENGS110_2020_BMI_calculator
 
 1.Overview
-In the scope of this project I plan to built a "BMI_calculator".
-Which will enable users with an inactive lifestyle to enter their weight and height data and get an approximate measure of the best weight for their health.
+In the scope of this project I plan to built a "BMI_calculator". Which will enable users with an inactive lifestyle to enter their weight and height data and get an approximate measure of the best weight for their health.
 
 2.Target Users
-Who: Everyone,especially 20+
-What: An estimator
-When: launching September 2020
-How: Users will be able to use the calculator using Python
+Who: Everyone,especially 20+.
+What: An estimator.
+When: launching September 2020.
+How: Users will be able to use the calculator using Python.
 
 
 3.Users Problems Solved
