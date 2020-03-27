@@ -1,29 +1,13 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[7]:
-
-
 import json
 
 
-# In[10]:
-
-
-f = open("data.json")  
-info = json.load(f)
-
-
-# In[11]:
-
-
-info
-
-
-# In[54]:
-
 
 def bmi_calc():
+    f = open("data.json")
+    info = json.load(f)
+    f.close()
+
+
     oldBMI = None
     name = input('Insert your name: ')
 
@@ -33,63 +17,44 @@ def bmi_calc():
     weight = input('Insert your weight [Kilogram]: ')
     weight = float(weight)
 
+    bmi = weight / (height * height)
 
-    H_2 = height*height
-    W_2 = weight
+    new_data = {'name': name,
+                'height': height,
+                'weight': weight,
+                'bmi': bmi
+                }
 
-    bmi = W_2/H_2
-    
-    new_data = {'name' : name,
-                'height' : height,
-                'weight' : weight,
-                'bmi' : bmi
-    }
-    
     for i in info:
         if new_data["name"] == i["name"]:
             oldBMI = i["bmi"]
             break
-    
+        else:
+            info.append(new_data)
 
 
-    info.append(new_data)
-
-    with open("data.json", 'a', encoding = 'utf-8') as f:
-        json.dump(info, f, ensure_ascii = False)
-    
+    with open("data.json", 'w') as f:
+        json.dump(info, f)
 
     if bmi < 18.5:
-            print('You are underweight')
+        print('You are underweight')
 
     elif bmi > 18.5 and bmi < 24.9:
-            print('You are normal')
+        print('You are normal')
 
     elif bmi > 25 and bmi < 29.9:
-            print('You are overweight')
+        print('You are overweight')
 
     else:
-            print('You are obese')
-            
-            
+        print('You are obese')
+
     if (oldBMI != None):
         if oldBMI > bmi:
             print('You decrease your BMI rate')
         elif oldBMI < bmi:
             print('You increase your BMI rate')
         else:
-                print('You keep your BMI rate')
-
-
-
-
-    
-        
-        
-        
-        
-
-
-# In[55]:
+            print('You keep your BMI rate')
 
 
 def mainFunc():
@@ -101,7 +66,6 @@ def mainFunc():
         yes_no = input('Do you want to continue?[y/n]: ')
 
 
-# In[ ]:
 
 
 mainFunc()
