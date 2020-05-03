@@ -17,6 +17,6 @@ Resolution: Periodically be notified about comparison of approximate estimation 
 4.User Stories\
 -As a user, create a personalized account.\
 -As a user, provide analysis of achieved results.\
--As a user, provide meal plan for better results.\
+
  
 
