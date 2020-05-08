@@ -1,5 +1,16 @@
 import json
 
+
+def mainFunc():
+    print('Welcome to the BMI system')
+    bmi_calc()
+    yes_no = input('Do you want to continue?[y/n]: ')
+    while (yes_no != 'n'):
+        bmi_calc()
+        yes_no = input('Do you want to continue?[y/n]: ')
+    return
+
+
 def printComparison(oldBMI, bmi):
     if (oldBMI != None):
         if oldBMI > bmi:
@@ -49,11 +60,13 @@ def bmi_calc():
                 }
 
     for i in info:
-        if new_data["name"] == i["name"]:
+        if (new_data["name"] == i["name"]):
             oldBMI = i["bmi"]
             break
         else:
             info.append(new_data)
+            break
+
 
 
     with open("data.JSON", 'w') as f:
@@ -66,15 +79,5 @@ def bmi_calc():
     return
 
 
-     
-            
-def mainFunc():
-    print('Welcome to the BMI system')
-    bmi_calc()
-    yes_no = input('Do you want to continue?[y/n]: ')
-    while yes_no != 'n':
-        bmi_calc()
-        yes_no = input('Do you want to continue?[y/n]: ')
-    return
 mainFunc()
-  
+
